@@ -1,0 +1,59 @@
+name: Deplite Files
+description: Upload, download, or delete files in Deplite storage.
+author: Deplite
+branding:
+  icon: upload-cloud
+  color: purple
+
+inputs:
+  api-token:
+    description: Deplite API token (Bearer).
+    required: true
+  mode:
+    description: "'upload', 'download', or 'delete'."
+    required: true
+
+  # upload
+  path:
+    description: Local file to upload (mode=upload).
+    required: false
+  filename:
+    description: Override stored filename (mode=upload).
+    required: false
+  content-type:
+    description: MIME type (mode=upload).
+    required: false
+  cleanup-rule:
+    description: "'ttl' or 'persistent' (mode=upload)."
+    required: false
+  ttl-seconds:
+    description: TTL in seconds for cleanup-rule=ttl (mode=upload).
+    required: false
+  binding-id:
+    description: Storage binding UUID (mode=upload; required if token grants multiple bindings).
+    required: false
+
+  # download / delete
+  file-id:
+    description: File UUID (mode=download or delete).
+    required: false
+  dest:
+    description: Local destination path (mode=download).
+    required: false
+
+  base-url:
+    description: Override the Deplite API base URL.
+    required: false
+    default: https://api.deplite.io/v1
+
+outputs:
+  file-id:
+    description: UUID of the file (upload).
+  size:
+    description: File size in bytes (upload, download).
+  status:
+    description: File status (upload).
+
+runs:
+  using: node24
+  main: dist/index.js

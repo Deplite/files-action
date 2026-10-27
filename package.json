@@ -1,0 +1,27 @@
+{
+  "name": "@deplite/files-action",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub Action that uploads, downloads, or deletes files in Deplite storage.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deplite/files-action.git"
+  },
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "lint": "tsc --noEmit && tsc -p tsconfig.test.json",
+    "test": "node --test \"test/*.test.mts\""
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vercel/ncc": "^0.38.1",
+    "typescript": "^5.5.0"
+  },
+  "overrides": {
+    "undici": "^8.12.2"
+  }
+}

@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output (lib/ is intermediate; dist/ ships to GitHub Actions and IS committed)
+lib/
+*.tsbuildinfo
+
+# Test & coverage
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Editor swap
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Local secrets / config
+.env
+.env.*
+!.env.example
+
+# IMPORTANT: dist/ is COMMITTED — GitHub Actions executes dist/index.js
+# directly when consumers write `uses: Deplite/files-action@v0`.
