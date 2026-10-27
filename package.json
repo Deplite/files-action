@@ -1,6 +1,6 @@
 {
   "name": "@deplite/files-action",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "GitHub Action that uploads, downloads, or deletes files in Deplite storage.",
   "license": "Apache-2.0",

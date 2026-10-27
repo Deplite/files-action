@@ -1,4 +1,4 @@
-# Deplite Files Action
+# Deplite Storage
 
 Deplite 스토리지에 파일을 업로드·다운로드·삭제하는 GitHub Actions입니다.
 
